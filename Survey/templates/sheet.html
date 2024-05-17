@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <h1>Registered</h1>
+    <ul>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>House</th>
+                <th>Role</th>
+            </tr>
+            {% for student in students %}
+                <tr>
+                    <td>
+                        {{ student["name"] }}
+                    </td>
+                    <td>
+                        {{ student["house"] }}
+                    </td>
+                    <td>
+                        {{ student["role"] }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </ul>
+
+{% endblock %}

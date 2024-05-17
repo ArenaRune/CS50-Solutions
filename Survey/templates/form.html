@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post">
+
+        <input class="form-control" name="name" type="text" placeholder="Name">
+
+        <select name="house" class="custom-select">
+          <option disabled selected value="">House</option>
+          <option value="Slytherin">Slytherin</option>
+          <option value="Gryffindor">Gryffindor</option>
+          <option value="Hufflepuff">Hufflepuff</option>
+          <option value="Ravenclaw">Ravenclaw</option>
+        </select>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="role" id="beater" value="beater" checked>
+          <label class="form-check-label" for="beater">
+            Beater
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="role" id="chaser" value="chaser">
+          <label class="form-check-label" for="chaser">
+            Chaser
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="role" id="seeker" value="seeker">
+          <label class="form-check-label" for="seeker">
+            Seeker
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="role" id="keeper" value="keeper">
+          <label class="form-check-label" for="keeper">
+            Keeper
+          </label>
+        </div>
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+
+    <script>
+
+        document.querySelector('form').onsubmit = function() {
+            if (!document.querySelector('input').value) {
+                alert('You must provide your name!');
+                return false;
+            }
+            else if (!document.querySelector('select').value) {
+                alert('You must provide your house!');
+                return false;
+            }
+            return true;
+        };
+
+    </script>
+
+{% endblock %}
